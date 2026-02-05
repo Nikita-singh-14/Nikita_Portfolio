@@ -71,9 +71,7 @@ export default function Hero() {
                 >
                     {/* Placeholder for Profile Image */}
                     <div className="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-background shadow-2xl relative z-10">
-                        <div className="absolute bottom-10 -translate-x-1/2 z-20 pointer-events-none right-0">
-                <div className='circle animate-float'></div>
-            </div>
+                       
                         <img
                             src="image.png"
                             alt="Nikita Singh"
