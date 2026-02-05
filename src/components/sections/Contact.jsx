@@ -56,7 +56,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Email</h3>
-                                        <p className="text-muted-foreground">nikita@example.com</p>
+                                        <p className="text-muted-foreground">nk2371174@gmail.com</p>
                                     </div>
                                 </div>
 
@@ -66,7 +66,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Phone</h3>
-                                        <p className="text-muted-foreground">+91-98765-XXXXX</p>
+                                        <p className="text-muted-foreground">+91-87908-03241</p>
                                     </div>
                                 </div>
 
@@ -76,7 +76,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg">Location</h3>
-                                        <p className="text-muted-foreground">Raipur, Chhattisgarh, India</p>
+                                        <p className="text-muted-foreground">Bilaspur, Chhattisgarh, India</p>
                                     </div>
                                 </div>
                             </CardContent>
@@ -85,14 +85,14 @@ export default function Contact() {
                         {/* Map Placeholder */}
                         <div className="h-64 rounded-xl overflow-hidden border shadow-md">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118983.65487739506!2d81.56477123910382!3d21.261980649581836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dda23be28229%3A0x163ee1204ff9e240!2sRaipur%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1706649234567!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.756832441805!2d82.14150111536602!3d22.130613785193975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28e16f36e8a763%3A0xabdc5d1d28b54e8!2sGuru%20Ghasidas%20Vishwavidyalaya%2C%20Bilaspur%2C%20Chhattisgarh%20495009%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="Raipur Map"
+                                title="Guru Ghasidas Vishwavidyalaya, Bilaspur"
                             ></iframe>
                         </div>
                     </motion.div>
@@ -106,20 +106,21 @@ export default function Contact() {
                     >
                         <Card className="border shadow-xl">
                             <CardContent className="p-8">
-                                <form onSubmit={handleSubmit} className="space-y-6">
+                                <form className="space-y-6" action="https://formspree.io/f/mnjvkykl" method="POST">
+                                    <input type="hidden" name="_next" value="https://your-site.com/thank-you" />
                                     <div className="space-y-2">
                                         <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Name</label>
-                                        <Input id="name" placeholder="Your Name" required />
+                                        <Input name="name" placeholder="Your Name" required />
                                     </div>
 
                                     <div className="space-y-2">
                                         <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label>
-                                        <Input id="email" type="email" placeholder="your@email.com" required />
+                                        <Input name="email" type="email" placeholder="your@email.com" required />
                                     </div>
 
                                     <div className="space-y-2">
                                         <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Message</label>
-                                        <Textarea id="message" placeholder="How can I help you?" className="min-h-[150px]" required />
+                                        <Textarea name="message" placeholder="How can I help you?" className="min-h-[150px]" required />
                                     </div>
 
                                     <Button type="submit" className="w-full" disabled={isSubmitting}>

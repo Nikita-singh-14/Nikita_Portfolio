@@ -9,9 +9,9 @@ const navItems = [
     { name: "Home", to: "hero" },
     { name: "About", to: "about" },
     { name: "Skills", to: "skills" },
-    { name: "Education", to: "education" },
-    { name: "Projects", to: "projects" },
     { name: "Experience", to: "experience" },
+    { name: "Projects", to: "projects" },
+    { name: "Certificate", to: "certificate" },
     { name: "Achievements", to: "achievements" },
     { name: "Contact", to: "contact" },
 ]
@@ -43,7 +43,7 @@ export default function Header() {
         >
             <div className="container mx-auto px-4 flex justify-between items-center">
                 {/* Logo */}
-                <div className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-purple-600 bg-clip-text text-transparent cursor-pointer">
+                <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent cursor-pointer">
                     <Link to="hero" smooth={true} duration={500}>
                         Nikita Singh
                     </Link>
@@ -59,7 +59,7 @@ export default function Header() {
                             duration={500}
                             spy={true}
                             offset={-70}
-                            activeClass="text-purple-500 font-semibold"
+                            activeClass="text-primary font-semibold"
                             className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors"
                         >
                             {item.name}
@@ -76,8 +76,16 @@ export default function Header() {
                         <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                     </Button>
 
-                    <Button variant="default" size="sm" className="hidden lg:flex gap-2">
-                        <Download className="h-4 w-4" /> Resume
+
+                    <Button
+                        variant="default"
+                        size="sm"
+                        className="hidden lg:flex gap-2"
+                        asChild
+                    >
+                        <a href="Resume.pdf" download target="_blank" rel="noopener noreferrer">
+                            <Download className="h-4 w-4" /> Resume
+                        </a>
                     </Button>
                 </nav>
 
@@ -125,9 +133,18 @@ export default function Header() {
                                     {item.name}
                                 </Link>
                             ))}
+
                             <Button className="w-full gap-2">
-                                <Download className="h-4 w-4" /> Download Resume
+                                <a
+                                    href="Resume.pdf"
+                                    download
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Download className="h-4 w-4" /> Download Resume
+                                </a>
                             </Button>
+
                         </div>
                     </motion.div>
                 )}

@@ -7,16 +7,16 @@ const experiences = [
     {
         role: "Full-Stack Developer",
         company: "Freelance",
-        period: "2024 - Present",
+        period: "August 2025 - Present",
         description: "Developing scalable web applications for diverse clients. Specializing in MERN stack and modern UI libraries.",
         skills: ["React", "Node.js", "MongoDB", "Tailwind"]
     },
     {
         role: "Graphic Design Intern",
         company: "Creative Agency",
-        period: "2023 - 2024",
+        period: "2 Months",
         description: "Designed marketing assets, social media graphics, and brand identities. Collaborated with UI/UX teams for web prototyping.",
-        skills: ["Photoshop", "Illustrator", "Figma"]
+        skills: ["Canva", "Figma"]
     }
 ]
 
@@ -31,7 +31,7 @@ export default function Experience() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
+                    <h2 className="text-3xl font-bold mb-4">Experience</h2>
                     <div className="w-20 h-1 bg-purple-500 mx-auto rounded-full mb-6" />
                 </motion.div>
 

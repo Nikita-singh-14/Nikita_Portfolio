@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 const projects = [
-    {
+    /*{
         title: "E-Commerce Platform",
         description: "A full-featured online store with cart functionality, payment gateway integration, and admin dashboard.",
         image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
@@ -20,22 +20,22 @@ const projects = [
         tags: ["Next.js", "TypeScript", "Tailwind"],
         demo: "#",
         github: "#"
-    },
+    },*/
     {
-        title: "Portfolio Website",
+        title: "Tripforlife",
         description: "Modern, responsive portfolio website built with React and Framer Motion.",
-        image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1000&auto=format&fit=crop",
-        tags: ["React", "Vite", "Framer Motion"],
-        demo: "#",
-        github: "#"
+        image: "Tripforlife.png",
+        tags: ["React", "Vite", "Tailwind CSS"],
+        demo: "https://user-profile-mws4.vercel.app/",
+        github: "https://github.com/Nikita-singh-14/user-profile"
     },
     {
-        title: "Health Tracker",
-        description: "Mobile-first application to track daily fitness activities and nutrition logs.",
-        image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop",
-        tags: ["React Native", "Firebase"],
-        demo: "#",
-        github: "#"
+        title: "SiymonSays Game",
+        description: "A fun and interactive game that tests your memory and reflexes.",
+        image: "Siymon.png",
+        tags: ["HTML","CSS", "JavaScript"],
+        demo: "https://saymonsays.vercel.app/",
+        github: "https://github.com/Nikita-singh-14/Saymonsays"
     }
 ]
 
@@ -50,7 +50,7 @@ export default function Projects() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
+                    <h2 className="text-3xl font-bold mb-4">Projects</h2>
                     <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         A selection of projects that demonstrate my technical expertise and creative problem solving.
