@@ -23,9 +23,10 @@ export default function About() {
                     <h2 className="text-3xl font-bold mb-4">About Me</h2>
                     <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
                     <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-                        Pre-Final year B.Tech student at Central University Bilaspur specializing in Information Technology.I'm driven by a passion for building and creating.
-
-My core focus is Web Development—I love the practical challenge of being a MERN Stack developer and creating intelligent APIs. I've also built a solid foundation in Java, which has significantly sharpened my problem-solving abilities, leading me to successfully conquer over 80 LeetCode problems. What sets me apart is how I blend technical skill with creativity; outside of coding, I freelance to design visually striking posters for Yajuka. For the past year, I've been an active member of my college's technical club, contributing as part of the Web Developer Team. I constantly seek out high-pressure, innovative environments, which is why I regularly participate in major hackathons like SIH. To stay ahead of the curve, I'm currently expanding my knowledge into the future of tech by taking Machine Learning courses via NPTEL. I genuinely enjoy combining my technical expertise with my design sensibilities to bring ideas to life.
+                       I am a Full Stack Developer and SIH 2025 winner, focused on building meaningful digital experiences through clean UI design, strong problem-solving, and teamwork.
+I am a pre-final year B.Tech student in Information Technology at Central University Bilaspur with a strong interest in web development. I currently work with Meru Techno Soft Pvt. Ltd., where I design user interfaces and collaborate closely with backend developers and team members to build functional web applications.
+I have a solid foundation in Java and have solved 80+ problems on LeetCode, which has strengthened my problem-solving skills. Along with development, I work as a freelance designer, creating posters and visual content. I have also been an active member of my college’s technical club and enjoy working in innovative, high-pressure environments. I am proud to be a Smart India Hackathon (SIH) 2025 winner, , which reflects my ability to work collaboratively and deliver impactful solutions.
+I am constantly learning and improving my skills, with the goal of creating user-centric, scalable, and real-world digital products.
                     </p>
                 </motion.div>
 

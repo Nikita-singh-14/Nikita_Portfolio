@@ -12,18 +12,26 @@ const projects = [
         tags: ["React", "Node.js", "MongoDB", "Redux"],
         demo: "#",
         github: "#"
+    },*/
+    {
+        title: "Reverse Proxy & Load Balancer",
+        description: "Backend project focused on load balancing and reverse proxy logic.",
+        image: "LoadBalancer.png",
+        tags: ["Typescript", "YAML", "Zod"],
+        demo: "https://github.com/Nikita-singh-14/Load_balancer",
+        github: "https://github.com/Nikita-singh-14/Load_balancer"
     },
     {
         title: "Task Management App",
-        description: "Collaborative project management tool with Kanban boards and real-time updates.",
-        image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=1000&auto=format&fit=crop",
-        tags: ["Next.js", "TypeScript", "Tailwind"],
-        demo: "#",
-        github: "#"
-    },*/
+        description: "This is my first full stack project Task Maneger.",
+        image: "TaskManeger.png",
+        tags: ["Express", "Node.js", "MongoDB", "TypeScript", "Tailwind"],
+        demo: "https://task-maneger-psi.vercel.app/",
+        github: "https://github.com/Nikita-singh-14/Task_Maneger"
+    },
     {
         title: "Tripforlife",
-        description: "Modern, responsive portfolio website built with React and Framer Motion.",
+        description: "This is first react project. Modern, responsive website for trip and travel.",
         image: "Tripforlife.png",
         tags: ["React", "Vite", "Tailwind CSS"],
         demo: "https://user-profile-mws4.vercel.app/",

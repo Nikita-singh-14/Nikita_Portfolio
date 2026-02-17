@@ -134,14 +134,15 @@ export default function Header() {
                                 </Link>
                             ))}
 
-                            <Button className="w-full gap-2">
+                            <Button className="w-full">
                                 <a
                                     href="Resume.pdf"
                                     download
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2"
                                 >
-                                    <Download className="h-4 w-4" /> Download Resume
+                                    <Download className="h-4 w-4 flex" /> Download Resume
                                 </a>
                             </Button>
 
