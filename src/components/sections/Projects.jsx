@@ -5,19 +5,19 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 const projects = [
-    /*{
-        title: "E-Commerce Platform",
-        description: "A full-featured online store with cart functionality, payment gateway integration, and admin dashboard.",
+    {
+        title: "Scalable ChatApp",
+        description: "Built scalable real-time chat using Socket.IO and Redis Pub/Sub for low-latency multi-server sync.",
         image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
-        tags: ["React", "Node.js", "MongoDB", "Redux"],
-        demo: "#",
-        github: "#"
-    },*/
+        tags: ["Redis"],
+        demo: "https://www.linkedin.com/posts/nikitasingh143_systemdesign-backendengineering-redis-ugcPost-7453418315294679040-_RgN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEy3ebIBpg_3pgXZCszPwFB3mrsKbQ-akp8",
+        github: "https://github.com/Nikita-singh-14/Scalable_Chatapp"
+    },
     {
         title: "Reverse Proxy & Load Balancer",
         description: "Backend project focused on load balancing and reverse proxy logic.",
         image: "LoadBalancer.png",
-        tags: ["Typescript", "YAML", "Zod"],
+        tags: ["Typescript", "YAML", "Zod", "Redis"],
         demo: "https://github.com/Nikita-singh-14/Load_balancer",
         github: "https://github.com/Nikita-singh-14/Load_balancer"
     },

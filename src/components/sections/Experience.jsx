@@ -5,15 +5,15 @@ import { Badge } from "@/components/ui/badge"
 
 const experiences = [
     {
-        role: "Full-Stack Developer",
-        company: "Freelance",
-        period: "August 2025 - Present",
-        description: "Developing scalable web applications for diverse clients. Specializing in MERN stack and modern UI libraries.",
-        skills: ["React", "Node.js", "MongoDB", "Tailwind"]
+        role: "Frontend Developer",
+        company: "Meru Technosoft Private Limited",
+        period: "Janaury 2026 - Present",
+        description: "Building responsive CRM interfaces for diverse industries using React, JavaScript, modern UI libraries, and Claude.",
+        skills: ["React.js", "Tailwind CSS", "Claude"]
     },
     {
         role: "Graphic Design Intern",
-        company: "Creative Agency",
+        company: "Rahul Sir Classes",
         period: "2 Months",
         description: "Designed marketing assets, social media graphics, and brand identities. Collaborated with UI/UX teams for web prototyping.",
         skills: ["Canva", "Figma"]
