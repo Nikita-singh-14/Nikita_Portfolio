@@ -6,6 +6,14 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 const projects = [
     {
+        title: "GGV_CAMPUS_THIRFT",
+        description: "Developed and implemented end-to-end functionalities including user authentication, cart system, order management, and role-based access control for a seamless marketplace experience.",
+        image: "GGV_CAMPUS_THIRFT.jpeg",
+        tags: ["TypeScript", "Tailwind CSS", "Express.js", "Node.js", "MongoDB"],
+        demo: "https://ggv-campus-thirft.vercel.app/",
+        github: "https://github.com/Nikita-singh-14/GGV_CAMPUS_THIRFT"
+    },
+    {
         title: "Scalable ChatApp",
         description: "Built scalable real-time chat using Socket.IO and Redis Pub/Sub for low-latency multi-server sync.",
         image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
