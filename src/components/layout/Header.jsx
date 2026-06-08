@@ -35,58 +35,77 @@ export default function Header() {
     }
 
     return (
-        <header
+        <motion.header
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
-                ? "bg-background/80 backdrop-blur-md shadow-md py-2"
+                ? "bg-background/85 backdrop-blur-xl shadow-lg py-2"
                 : "bg-transparent py-4"
                 }`}
         >
             <div className="container mx-auto px-4 flex justify-between items-center">
                 {/* Logo */}
-                <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent cursor-pointer">
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                    className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent cursor-pointer"
+                >
                     <Link to="hero" smooth={true} duration={500}>
                         Nikita Singh
                     </Link>
-                </div>
+                </motion.div>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center space-x-6">
-                    {navItems.map((item) => (
-                        <Link
+                    {navItems.map((item, index) => (
+                        <motion.div
                             key={item.name}
-                            to={item.to}
-                            smooth={true}
-                            duration={500}
-                            spy={true}
-                            offset={-70}
-                            activeClass="text-primary font-semibold"
-                            className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.25 + index * 0.05 }}
+                            whileHover={{ y: -2 }}
+                            className="cursor-pointer"
                         >
-                            {item.name}
-                        </Link>
+                            <Link
+                                to={item.to}
+                                smooth={true}
+                                duration={500}
+                                spy={true}
+                                offset={-70}
+                                activeClass="text-primary font-semibold"
+                                className="text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                                {item.name}
+                            </Link>
+                        </motion.div>
                     ))}
 
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={toggleTheme}
-                        aria-label="Toggle Theme"
-                    >
-                        <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                        <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                    </Button>
+                    <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.55 }}>
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={toggleTheme}
+                            aria-label="Toggle Theme"
+                        >
+                            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                        </Button>
+                    </motion.div>
 
-
-                    <Button
-                        variant="default"
-                        size="sm"
-                        className="hidden lg:flex gap-2"
-                        asChild
-                    >
-                        <a href="Resume.pdf" download target="_blank" rel="noopener noreferrer">
-                            <Download className="h-4 w-4" /> Resume
-                        </a>
-                    </Button>
+                    <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
+                        <Button
+                            variant="default"
+                            size="sm"
+                            className="hidden lg:flex gap-2"
+                            asChild
+                        >
+                            <a href="Resume.pdf" download target="_blank" rel="noopener noreferrer">
+                                <Download className="h-4 w-4" /> Resume
+                            </a>
+                        </Button>
+                    </motion.div>
                 </nav>
 
                 {/* Mobile Menu Toggle */}
@@ -150,6 +169,6 @@ export default function Header() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </header>
+        </motion.header>
     )
 }

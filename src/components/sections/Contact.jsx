@@ -5,15 +5,17 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import { contactPanelVariants, sectionTitle } from "@/lib/sectionMotionPresets"
 
 export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
+    const [ref, isInView] = useScrollAnimation()
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setIsSubmitting(true)
-        // Simulate API call
         setTimeout(() => {
             setIsSubmitting(false)
             setIsSuccess(true)
@@ -23,13 +25,30 @@ export default function Contact() {
     }
 
     return (
-        <section id="contact" className="py-20 bg-muted/30">
-            <div className="container mx-auto px-4">
+        <section id="contact" className="py-20 bg-muted/30 relative overflow-hidden" ref={ref}>
+            <motion.div
+                className="absolute inset-0 pointer-events-none"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+            >
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    className="absolute left-8 top-16 h-36 w-36 rounded-full bg-cyan-500/10 blur-3xl"
+                    animate={{ x: [0, 16, 0], y: [0, -10, 0] }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                    className="absolute right-10 bottom-8 h-42 w-42 rounded-full bg-violet-500/10 blur-3xl"
+                    animate={{ x: [0, -20, 0], y: [0, 12, 0] }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                />
+            </motion.div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <motion.div
+                    variants={sectionTitle}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
@@ -40,15 +59,14 @@ export default function Contact() {
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
-                    {/* Contact Info */}
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        variants={contactPanelVariants}
+                        custom="left"
+                        initial="hidden"
+                        animate={isInView ? "visible" : "hidden"}
                         className="space-y-8"
                     >
-                        <Card className="border-none shadow-lg bg-background/50 backdrop-blur-sm">
+                        <Card className="border-none shadow-lg bg-background/50 backdrop-blur-md">
                             <CardContent className="p-8 space-y-6">
                                 <div className="flex items-start gap-4">
                                     <div className="p-3 bg-primary/10 rounded-full text-primary">
@@ -82,8 +100,12 @@ export default function Contact() {
                             </CardContent>
                         </Card>
 
-                        {/* Map Placeholder */}
-                        <div className="h-64 rounded-xl overflow-hidden border shadow-md">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.98 }}
+                            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="h-64 rounded-xl overflow-hidden border shadow-md"
+                        >
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.756832441805!2d82.14150111536602!3d22.130613785193975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28e16f36e8a763%3A0xabdc5d1d28b54e8!2sGuru%20Ghasidas%20Vishwavidyalaya%2C%20Bilaspur%2C%20Chhattisgarh%20495009%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                                 width="100%"
@@ -94,32 +116,30 @@ export default function Contact() {
                                 referrerPolicy="no-referrer-when-downgrade"
                                 title="Guru Ghasidas Vishwavidyalaya, Bilaspur"
                             ></iframe>
-                        </div>
+                        </motion.div>
                     </motion.div>
 
-                    {/* Contact Form */}
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        variants={contactPanelVariants}
+                        custom="right"
+                        initial="hidden"
+                        animate={isInView ? "visible" : "hidden"}
                     >
-                        <Card className="border shadow-xl">
+                        <Card className="border shadow-xl bg-background/80 backdrop-blur-md">
                             <CardContent className="p-8">
-                                <form className="space-y-6" action="https://formspree.io/f/mnjvkykl" method="POST">
-                                    <input type="hidden" name="_next" value="https://your-site.com/thank-you" />
+                                <form className="space-y-6" onSubmit={handleSubmit}>
                                     <div className="space-y-2">
-                                        <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Name</label>
+                                        <label htmlFor="name" className="text-sm font-medium leading-none">Name</label>
                                         <Input name="name" placeholder="Your Name" required />
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label>
+                                        <label htmlFor="email" className="text-sm font-medium leading-none">Email</label>
                                         <Input name="email" type="email" placeholder="your@email.com" required />
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Message</label>
+                                        <label htmlFor="message" className="text-sm font-medium leading-none">Message</label>
                                         <Textarea name="message" placeholder="How can I help you?" className="min-h-[150px]" required />
                                     </div>
 

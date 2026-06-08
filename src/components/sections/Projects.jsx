@@ -2,7 +2,9 @@ import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import { projectsCardVariants, sectionTitle } from "@/lib/sectionMotionPresets"
 
 const projects = [
     {
@@ -56,14 +58,33 @@ const projects = [
 ]
 
 export default function Projects() {
+    const [ref, isInView] = useScrollAnimation()
+
     return (
-        <section id="projects" className="py-20 bg-muted/50">
-            <div className="container mx-auto px-4">
+        <section id="projects" className="py-20 bg-muted/50 relative overflow-hidden" ref={ref}>
+            <motion.div
+                className="absolute inset-0 pointer-events-none"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+            >
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    className="absolute left-8 top-12 h-40 w-40 rounded-full bg-primary/10 blur-3xl"
+                    animate={{ y: [0, -14, 0], scale: [1, 1.08, 1] }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                    className="absolute right-12 bottom-8 h-44 w-44 rounded-full bg-cyan-500/10 blur-3xl"
+                    animate={{ x: [0, -18, 0], y: [0, 14, 0] }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                />
+            </motion.div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <motion.div
+                    variants={sectionTitle}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
                     className="text-center mb-12"
                 >
                     <h2 className="text-3xl font-bold mb-4">Projects</h2>
@@ -73,23 +94,36 @@ export default function Projects() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <motion.div
+                    className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-5xl mx-auto"
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            variants={projectsCardVariants}
+                            custom={index}
+                            initial="hidden"
+                            animate={isInView ? "visible" : "hidden"}
+                            whileHover="hover"
+                            whileTap={{ scale: 0.95 }}
                         >
-                            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col group">
+                            <Card className="overflow-hidden h-full flex flex-col group bg-card hover:border-primary/50 transition-colors duration-300 backdrop-blur-md">
                                 <div className="relative h-48 overflow-hidden">
-                                    <img
+                                    <motion.img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="w-full h-full object-cover"
+                                        whileHover={{ scale: 1.15 }}
+                                        transition={{ duration: 0.5 }}
                                     />
-                                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                                    <motion.div
+                                        className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-4"
+                                        initial={{ opacity: 0 }}
+                                        whileHover={{ opacity: 1 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
                                         <Button variant="secondary" size="sm" asChild>
                                             <a href={project.demo} target="_blank" rel="noopener noreferrer" className="gap-2">
                                                 <ExternalLink className="h-4 w-4" /> Live Demo
@@ -100,7 +134,7 @@ export default function Projects() {
                                                 <Github className="h-4 w-4" /> Code
                                             </a>
                                         </Button>
-                                    </div>
+                                    </motion.div>
                                 </div>
                                 <CardHeader>
                                     <CardTitle>{project.title}</CardTitle>
@@ -118,7 +152,7 @@ export default function Projects() {
                             </Card>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     )
