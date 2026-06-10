@@ -45,37 +45,35 @@
     /* Slightly friendlier corners */
   }
 
-  .dark {
-    /* Dark Mode - Clean Slate / Deep Space */
-    --background: 240 5% 10%;
-    /* Not pitch black, deep grey */
-    --foreground: 0 0% 95%;
+ .dark {
+  --background: 225 50% 6%;      /* #050816 */
+  --foreground: 210 40% 98%;
 
-    --card: 240 5% 15%;
-    --card-foreground: 0 0% 95%;
+  --card: 225 45% 9%;            /* Dark blue cards */
+  --card-foreground: 210 40% 98%;
 
-    --popover: 240 5% 15%;
-    --popover-foreground: 0 0% 95%;
+  --popover: 225 45% 9%;
+  --popover-foreground: 210 40% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5% 10%;
+  --primary: 217 91% 60%;        /* Blue */
+  --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 20%;
-    --secondary-foreground: 0 0% 98%;
+  --secondary: 225 35% 12%;
+  --secondary-foreground: 210 40% 98%;
 
-    --muted: 240 5% 20%;
-    --muted-foreground: 240 5% 60%;
+  --muted: 225 35% 12%;
+  --muted-foreground: 215 20% 65%;
 
-    --accent: 240 5% 25%;
-    --accent-foreground: 0 0% 98%;
+  --accent: 225 35% 16%;
+  --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
 
-    --border: 240 5% 25%;
-    --input: 240 5% 25%;
-    --ring: 0 0% 95%;
-  }
+  --border: 217 50% 18%;
+  --input: 217 50% 18%;
+  --ring: 217 91% 60%;
+}
 }
 
 .cell {

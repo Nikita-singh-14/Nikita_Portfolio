@@ -8,6 +8,14 @@ import { projectsCardVariants, sectionTitle } from "@/lib/sectionMotionPresets"
 
 const projects = [
     {
+        title: "Vue Project",
+        description: "Developed and implemented end-to-end functionalities including user authentication, cart system, order management, and role-based access control for a seamless marketplace experience.",
+        image: "GGV_CAMPUS_THIRFT.jpeg",
+        tags: ["TypeScript", "Tailwind CSS", "Express.js", "Node.js", "MongoDB"],
+        demo: "https://ggv-campus-thirft.vercel.app/",
+        github: "https://github.com/Nikita-singh-14/GGV_CAMPUS_THIRFT"
+    },
+    {
         title: "GGV_CAMPUS_THIRFT",
         description: "Developed and implemented end-to-end functionalities including user authentication, cart system, order management, and role-based access control for a seamless marketplace experience.",
         image: "GGV_CAMPUS_THIRFT.jpeg",
@@ -95,7 +103,7 @@ export default function Projects() {
                 </motion.div>
 
                 <motion.div
-                    className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-5xl mx-auto"
+                    className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-4xl mx-auto"
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
@@ -110,7 +118,7 @@ export default function Projects() {
                             whileTap={{ scale: 0.95 }}
                         >
                             <Card className="overflow-hidden h-full flex flex-col group bg-card hover:border-primary/50 transition-colors duration-300 backdrop-blur-md">
-                                <div className="relative h-48 overflow-hidden">
+                                <div className="relative h-40 overflow-hidden">
                                     <motion.img
                                         src={project.image}
                                         alt={project.title}

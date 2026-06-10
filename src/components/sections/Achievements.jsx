@@ -44,7 +44,7 @@ export default function Achievements() {
                     animate={isInView ? "visible" : "hidden"}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl font-bold mb-4">Achievements & Activities</h2>
+                    <h2 className="text-3xl font-bold mb-4">Achievements</h2>
                     <div className="w-20 h-1 bg-purple-500 mx-auto rounded-full mb-6" />
                     <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                         Highlights from my recent projects and competitive accomplishments, presented with a modern animated style.

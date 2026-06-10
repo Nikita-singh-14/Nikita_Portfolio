@@ -32,6 +32,10 @@ const Hero3D = () => {
     containerRef.current.appendChild(renderer.domElement)
     rendererRef.current = renderer
 
+   
+
+   
+
     const coreGeometry = new THREE.IcosahedronGeometry(1.3, 4)
     const coreMaterial = new THREE.MeshStandardMaterial({
       color: 0x6366f1,

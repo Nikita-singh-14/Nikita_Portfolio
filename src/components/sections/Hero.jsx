@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { FaLinkedin } from "react-icons/fa6"
 import { FaGithub } from "react-icons/fa"
-import Hero3D from "@/components/animations/Hero3D"
+//import Hero3D from "@/components/animations/Hero3D"
 import { heroTextVariants, buttonVariants, floatingVariants } from "@/lib/animationVariants"
 
 const containerMotion = {
@@ -98,7 +98,13 @@ export default function Hero() {
                     transition={{ duration: 0.9, delay: 0.25, ease: "easeOut" }}
                     className="relative mx-auto w-full max-w-[620px] h-[520px]"
                 >
-                    <Hero3D />
+                    <div className="flex items-center justify-center w-full h-full">
+                        <img
+                            src="/image.png"
+                            alt="Nikita Singh"
+                            className="w-96 h-96 object-cover rounded-3xl shadow-2xl border border-white/10"
+                        />
+                    </div>
 
                     <motion.div
                         variants={floatingVariants}

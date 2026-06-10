@@ -136,7 +136,7 @@ const row2 = techs.slice(half)
 
 function TechPill({ name, icon }) {
   return (
-    <div className="flex items-center gap-2.5 px-4 py-2.5 bg-card border border-border rounded-xl whitespace-nowrap hover:border-purple-500/40 hover:bg-muted transition-all duration-200 cursor-default">
+    <div className="flex items-center gap-3 px-4 py-2.5 bg-card border border-border rounded-xl whitespace-nowrap hover:border-purple-500/40 hover:bg-muted transition-all duration-200 cursor-default">
       <img src={icon} alt={name} className="w-5 h-5 object-contain" loading="lazy" />
       <span className="text-sm font-medium text-foreground">{name}</span>
     </div>
@@ -173,7 +173,7 @@ export default function Skills() {
         }
         .marquee-track {
           display: flex;
-          gap: 12px;
+          gap: 25px;
           width: max-content;
         }
         .marquee-row:hover .marquee-track {
