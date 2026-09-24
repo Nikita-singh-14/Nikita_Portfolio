@@ -8,12 +8,12 @@ import { projectsCardVariants, sectionTitle } from "@/lib/sectionMotionPresets"
 
 const projects = [
     {
-        title: "Vue Project",
-        description: "Developed and implemented end-to-end functionalities including user authentication, cart system, order management, and role-based access control for a seamless marketplace experience.",
-        image: "GGV_CAMPUS_THIRFT.jpeg",
-        tags: ["TypeScript", "Tailwind CSS", "Express.js", "Node.js", "MongoDB"],
-        demo: "https://ggv-campus-thirft.vercel.app/",
-        github: "https://github.com/Nikita-singh-14/GGV_CAMPUS_THIRFT"
+        title: "Video Sharing Platform",
+        description: "Developed and implemented end-to-end functionalities including user authentication, video sharing system, make playlist, comment, tweet etc.",
+        image: "Youtube_Clone.jpeg",
+        tags: ["React.js", "Tailwind CSS", "Express.js", "Node.js", "MongoDB", "Cloudinary"],
+        demo: "https://youtube-clone-mern-weld.vercel.app/",
+        github: "https://github.com/Nikita-singh-14/youtube-clone-mern"
     },
     {
         title: "GGV_CAMPUS_THIRFT",

@@ -100,7 +100,7 @@ export default function Hero() {
                 >
                     <div className="flex items-center justify-center w-full h-full">
                         <img
-                            src="/image.png"
+                            src="/Sih.png"
                             alt="Nikita Singh"
                             className="w-96 h-96 object-cover rounded-3xl shadow-2xl border border-white/10"
                         />
