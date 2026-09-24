@@ -10,7 +10,7 @@ const projects = [
     {
         title: "Video Sharing Platform",
         description: "Developed and implemented end-to-end functionalities including user authentication, video sharing system, make playlist, comment, tweet etc.",
-        image: "Youtube_Clone.jpeg",
+        image: "Youtube_Clone.png",
         tags: ["React.js", "Tailwind CSS", "Express.js", "Node.js", "MongoDB", "Cloudinary"],
         demo: "https://youtube-clone-mern-weld.vercel.app/",
         github: "https://github.com/Nikita-singh-14/youtube-clone-mern"
