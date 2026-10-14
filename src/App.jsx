@@ -61,11 +61,11 @@ export default function App() {
             >
               <Hero />
               <About />
-              <Skills />
               <Experience />
-              <Projects />
-              <Certificate />
               <Achievements />
+              <Projects />
+              <Skills />
+              <Certificate />
               <Contact />
             </motion.main>
           </AnimatePresence>

@@ -8,11 +8,11 @@ import { useTheme } from "@/components/theme-provider"
 const navItems = [
     { name: "Home", to: "hero" },
     { name: "About", to: "about" },
-    { name: "Skills", to: "skills" },
     { name: "Experience", to: "experience" },
-    { name: "Projects", to: "projects" },
-    { name: "Certificate", to: "certificate" },
     { name: "Achievements", to: "achievements" },
+    { name: "Projects", to: "projects" },
+    { name: "Skills", to: "skills" },
+    { name: "Certificate", to: "certificate" },
     { name: "Contact", to: "contact" },
 ]
 
