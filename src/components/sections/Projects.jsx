@@ -27,7 +27,7 @@ const projects = [
         title: "Scalable ChatApp",
         description: "Built scalable real-time chat using Socket.IO and Redis Pub/Sub for low-latency multi-server sync.",
         image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
-        tags: ["Redis"],
+        tags: ["Socket.IO", "Redis", "Node.js"],
         demo: "https://www.linkedin.com/posts/nikitasingh143_systemdesign-backendengineering-redis-ugcPost-7453418315294679040-_RgN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEy3ebIBpg_3pgXZCszPwFB3mrsKbQ-akp8",
         github: "https://github.com/Nikita-singh-14/Scalable_Chatapp"
     },
@@ -41,7 +41,7 @@ const projects = [
     },
     {
         title: "Task Management App",
-        description: "This is my first full stack project Task Maneger.",
+        description: "My first full stack project: a task manager with a Node.js backend and a responsive UI.",
         image: "TaskManeger.png",
         tags: ["Express", "Node.js", "MongoDB", "TypeScript", "Tailwind"],
         demo: "https://task-maneger-psi.vercel.app/",
@@ -49,7 +49,7 @@ const projects = [
     },
     {
         title: "Tripforlife",
-        description: "This is first react project. Modern, responsive website for trip and travel.",
+        description: "My first React project: a modern, responsive website for trip and travel.",
         image: "Tripforlife.png",
         tags: ["React", "Vite", "Tailwind CSS"],
         demo: "https://user-profile-mws4.vercel.app/",
@@ -59,7 +59,7 @@ const projects = [
         title: "SiymonSays Game",
         description: "A fun and interactive game that tests your memory and reflexes.",
         image: "Siymon.png",
-        tags: ["HTML","CSS", "JavaScript"],
+        tags: ["HTML", "CSS", "JavaScript"],
         demo: "https://saymonsays.vercel.app/",
         github: "https://github.com/Nikita-singh-14/Saymonsays"
     }
@@ -70,6 +70,7 @@ export default function Projects() {
 
     return (
         <section id="projects" className="py-20 bg-muted/50 relative overflow-hidden" ref={ref}>
+            {/* Soft animated background glows */}
             <motion.div
                 className="absolute inset-0 pointer-events-none"
                 initial={{ opacity: 0 }}
@@ -89,6 +90,7 @@ export default function Projects() {
             </motion.div>
 
             <div className="container mx-auto px-4 relative z-10">
+                {/* Section heading */}
                 <motion.div
                     variants={sectionTitle}
                     initial="hidden"
@@ -102,27 +104,29 @@ export default function Projects() {
                     </p>
                 </motion.div>
 
+                {/* Responsive grid: 1 column (mobile), 2 columns (medium), 3 columns (large) */}
                 <motion.div
-                    className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-4xl mx-auto"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
                     {projects.map((project, index) => (
                         <motion.div
-                            key={index}
+                            key={project.title}
                             variants={projectsCardVariants}
                             custom={index}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
                             whileHover="hover"
-                            whileTap={{ scale: 0.95 }}
+                            whileTap={{ scale: 0.98 }}
                         >
                             <Card className="overflow-hidden h-full flex flex-col group bg-card hover:border-primary/50 transition-colors duration-300 backdrop-blur-md">
-                                <div className="relative h-40 overflow-hidden">
+                                <div className="relative h-48 overflow-hidden">
                                     <motion.img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover"
+                                        loading="lazy"
+                                        className="w-full h-full object-cover object-top"
                                         whileHover={{ scale: 1.15 }}
                                         transition={{ duration: 0.5 }}
                                     />
