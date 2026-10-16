@@ -1,42 +1,114 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  min-height: 100vh;
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.hero-contours {
+  background:
+    repeating-radial-gradient(
+      ellipse 48% 42% at 78% 45%,
+      transparent 0 19px,
+      rgba(151, 99, 255, 0.18) 20px,
+      transparent 21px 29px
+    ),
+    radial-gradient(ellipse at 78% 45%, rgba(98, 48, 173, 0.16), transparent 49%);
+  mask-image: linear-gradient(90deg, transparent 18%, black 55%, black 100%);
+  opacity: 0.68;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero-contour-art {
+  z-index: 0;
+  opacity: 0.55;
+  mask-image: linear-gradient(90deg, transparent 8%, black 37%, black 100%);
+}
+
+.hero-contour-rings {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.hero-contour-rings-main {
+  animation: contour-flow 26s ease-in-out infinite;
+}
+
+.hero-contour-rings-side {
+  animation: contour-flow 32s ease-in-out -11s infinite reverse;
+}
+
+@keyframes contour-flow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-1deg) scale(1);
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    transform: translate3d(-18px, 12px, 0) rotate(1.5deg) scale(1.035);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.hero-rail::before {
+  position: absolute;
+  top: 1.4rem;
+  bottom: 0;
+  left: -2.2rem;
+  width: 2px;
+  background: linear-gradient(to bottom, hsl(var(--primary)), transparent);
+  content: "";
+}
+
+.hero-rail::after {
+  position: absolute;
+  top: 1.2rem;
+  left: calc(-2.2rem - 5px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  box-shadow: 0 0 24px hsl(var(--primary) / 0.75);
+  content: "";
+}
+
+.hero-image-frame {
+  background:
+    linear-gradient(145deg, hsl(var(--primary) / 0.3), transparent 48%),
+    hsl(var(--card));
+  box-shadow: 0 28px 100px rgba(87, 45, 150, 0.2);
+}
+
+.hero-image-frame img {
+  filter: saturate(0.88);
+}
+
+@media (max-width: 767px) {
+  .hero-contours {
+    background-position: 65% center;
+    mask-image: linear-gradient(180deg, black, transparent 90%);
+    opacity: 0.4;
+  }
+
+  .hero-contour-art {
+    opacity: 0.35;
+    mask-image: linear-gradient(180deg, black, transparent 88%);
+  }
+
+  .hero-rail::before,
+  .hero-rail::after {
+    display: none;
   }
 }
 
-.card {
-  padding: 2em;
-}
+@media (prefers-reduced-motion: reduce) {
+  .hero-contour-rings {
+    animation: none;
+  }
 
-.read-the-docs {
-  color: #888;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
