@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react"
+import { Github, Linkedin, Leetcode, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Footer() {
@@ -26,11 +26,11 @@ export default function Footer() {
                         <Linkedin className="h-5 w-5" />
                     </motion.a>
                     <motion.a
-                        href="#"
+                        href="https://leetcode.com/u/nikitasingh14434/"
                         className="text-muted-foreground hover:text-primary transition-colors"
                         whileHover={{ y: -2 }}
                     >
-                        <Twitter className="h-5 w-5" />
+                        <Leetcode className="h-5 w-5" />
                     </motion.a>
                     <motion.a
                         href="nk2371174@gmail.com"

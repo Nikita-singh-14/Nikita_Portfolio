@@ -179,9 +179,7 @@ function TiltCard({ children, className = "", onClick }) {
     )
 }
 
-/* ------------------------------------------------------------------ */
-/* SMALL PIECES                                                        */
-/* ------------------------------------------------------------------ */
+
 function ProjectLinks({ project, size = "sm" }) {
     const stop = (e) => e.stopPropagation()
     return (
