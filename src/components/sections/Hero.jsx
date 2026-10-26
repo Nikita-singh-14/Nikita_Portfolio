@@ -198,7 +198,7 @@ export default function Hero() {
                     <div className="hero-image-frame relative overflow-hidden rounded-[2rem] border border-white/10 p-3">
                         <div className="overflow-hidden rounded-[1.45rem] bg-muted">
                             <img
-                                src="/image.png"
+                                src="/photo.jpg"
                                 alt="Nikita Singh"
                                 className="aspect-[4/4.5] w-full object-cover object-center"
                                 fetchPriority="high"
