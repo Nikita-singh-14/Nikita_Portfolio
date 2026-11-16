@@ -72,10 +72,10 @@ export default function Header() {
                 </Link>
 
                 <a
-                    href="mailto:nk2371174@gmail.com"
+                    href="mailto:singhnikita1443@gmail.com"
                     className="hidden text-sm text-muted-foreground transition-colors hover:text-primary 2xl:block"
                 >
-                    nk2371174@gmail.com
+                    singhnikita1443@gmail.com
                 </a>
 
                 <nav aria-label="Main navigation" className="hidden items-center gap-5 lg:flex">
@@ -145,7 +145,7 @@ export default function Header() {
                                 </Link>
                             ))}
                             <Button asChild className="mt-2 w-full gap-2 rounded-full">
-                                <a href="/Resume.pdf" download>
+                                <a href="https://drive.google.com/file/d/11fOaa_AG2-7AtbnjUNjZOk4FEcdvrzlH/view" download>
                                     <Download className="h-4 w-4" />
                                     Download resume
                                 </a>
