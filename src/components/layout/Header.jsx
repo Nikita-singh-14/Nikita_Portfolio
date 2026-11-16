@@ -98,7 +98,7 @@ export default function Header() {
                 <div className="hidden items-center gap-2 lg:flex">
                     <ThemeToggle onClick={toggleTheme} />
                     <Button size="sm" asChild className="gap-2 rounded-full px-4">
-                        <a href="/Resume.pdf" download>
+                        <a href="https://drive.google.com/file/d/11fOaa_AG2-7AtbnjUNjZOk4FEcdvrzlH/view" download>
                             <Download className="h-4 w-4" />
                             Resume
                         </a>
