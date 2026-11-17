@@ -16,13 +16,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import { sectionTitle } from "@/lib/sectionMotionPresets"
 
-/* ------------------------------------------------------------------ */
-/* DATA                                                                */
-/* - categories: used by the filter tabs (a project can have several)  */
-/* - featured:   the one project shown as the big card on "All"        */
-/* - highlights: bullet points shown in the detail modal               */
-/* - learned:    OPTIONAL. Add a sentence and it appears in the modal  */
-/* - demoLabel:  OPTIONAL. Text for the demo button (default: Live Demo) */
+
 /* ------------------------------------------------------------------ */
 const projects = [
     {
@@ -133,10 +127,7 @@ const FILTERS = ["All", "Full-Stack", "Backend", "Frontend", "Games"]
 
 const hasSeparateDemo = (p) => p.demo && p.demo !== p.github
 
-/* ------------------------------------------------------------------ */
-/* TILT WRAPPER: card leans toward the mouse and a soft glare follows  */
-/* It does nothing on touch screens or when reduced motion is on.      */
-/* ------------------------------------------------------------------ */
+
 function TiltCard({ children, className = "", onClick }) {
     const reduceMotion = useReducedMotion()
     const x = useMotionValue(0.5)
@@ -439,14 +430,14 @@ export default function Projects() {
                 {active && (
                     <DialogContent
                         onKeyDown={handleKeyDown}
-                        className="max-h-[90vh] max-w-3xl gap-0 overflow-y-auto p-0"
+                        className="flex max-h-[calc(100dvh-2rem)] max-w-3xl flex-col overflow-hidden p-0"
                     >
                         <img
                             src={active.image}
                             alt={`${active.title} preview`}
-                            className="h-56 w-full object-cover object-top sm:h-72"
+                            className="h-36 w-full shrink-0 object-cover object-top sm:h-56"
                         />
-                        <div className="space-y-5 p-6">
+                        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto p-4 sm:p-6">
                             <DialogHeader className="space-y-2 text-left">
                                 <DialogTitle className="text-2xl">{active.title}</DialogTitle>
                                 <DialogDescription className="text-base">{active.description}</DialogDescription>
@@ -480,22 +471,22 @@ export default function Projects() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap items-center justify-between gap-4 border-t pt-5">
-                                <ProjectLinks project={active} size="default" />
-                                {navList.length > 1 && (
-                                    <div className="flex items-center gap-2">
-                                        <Button variant="outline" size="icon" onClick={() => go(-1)} aria-label="Previous project">
-                                            <ArrowLeft className="h-4 w-4" />
-                                        </Button>
-                                        <span className="min-w-[3.5rem] text-center text-sm text-muted-foreground">
-                                            {activeIndex + 1} / {navList.length}
-                                        </span>
-                                        <Button variant="outline" size="icon" onClick={() => go(1)} aria-label="Next project">
-                                            <ArrowRight className="h-4 w-4" />
-                                        </Button>
-                                    </div>
-                                )}
-                            </div>
+                        </div>
+                        <div className="flex shrink-0 flex-col gap-3 border-t bg-background p-4 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+                            <ProjectLinks project={active} size="default" />
+                            {navList.length > 1 && (
+                                <div className="flex items-center justify-center gap-2 sm:justify-end">
+                                    <Button variant="outline" size="icon" onClick={() => go(-1)} aria-label="Previous project">
+                                        <ArrowLeft className="h-4 w-4" />
+                                    </Button>
+                                    <span className="min-w-[3.5rem] text-center text-sm text-muted-foreground">
+                                        {activeIndex + 1} / {navList.length}
+                                    </span>
+                                    <Button variant="outline" size="icon" onClick={() => go(1)} aria-label="Next project">
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Button>
+                                </div>
+                            )}
                         </div>
                     </DialogContent>
                 )}
