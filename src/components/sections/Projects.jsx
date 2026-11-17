@@ -8,7 +8,7 @@ import {
     useSpring,
     useTransform,
 } from "framer-motion"
-import { ArrowLeft, ArrowRight, ExternalLink, Github, Star } from "lucide-react"
+import { ArrowLeft, ArrowRight, ExternalLink, Github, Star, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -61,8 +61,7 @@ const projects = [
             "Redis Pub/Sub keeps multiple servers in sync",
             "Designed for low-latency delivery across servers",
         ],
-        demo: "https://www.linkedin.com/posts/nikitasingh143_systemdesign-backendengineering-redis-ugcPost-7453418315294679040-_RgN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEy3ebIBpg_3pgXZCszPwFB3mrsKbQ-akp8",
-        demoLabel: "Read the Post",
+        demo: "https://scalable-chatapp.vercel.app/",
         github: "https://github.com/Nikita-singh-14/Scalable_Chatapp",
     },
     {
@@ -430,14 +429,14 @@ export default function Projects() {
                 {active && (
                     <DialogContent
                         onKeyDown={handleKeyDown}
-                        className="flex max-h-[calc(100dvh-2rem)] max-w-3xl flex-col overflow-hidden p-0"
+                        className="grid max-h-[calc(100dvh-2rem)] max-w-4xl grid-cols-1 grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden rounded-2xl bg-card p-0 shadow-2xl md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:grid-rows-[minmax(0,1fr)_auto]"
                     >
                         <img
                             src={active.image}
                             alt={`${active.title} preview`}
-                            className="h-36 w-full shrink-0 object-cover object-top sm:h-56"
+                            className="h-36 w-full object-cover object-top sm:h-48 md:h-full md:min-h-[24rem]"
                         />
-                        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto p-4 sm:p-6">
+                        <div className="min-h-0 space-y-5 overflow-y-auto p-4 pt-12 sm:p-6 sm:pt-14 md:pt-8">
                             <DialogHeader className="space-y-2 text-left">
                                 <DialogTitle className="text-2xl">{active.title}</DialogTitle>
                                 <DialogDescription className="text-base">{active.description}</DialogDescription>
@@ -472,7 +471,7 @@ export default function Projects() {
                             </div>
 
                         </div>
-                        <div className="flex shrink-0 flex-col gap-3 border-t bg-background p-4 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+                        <div className="flex flex-col gap-3 border-t bg-background p-4 sm:flex-row sm:items-center sm:justify-between sm:p-6 md:col-span-2">
                             <ProjectLinks project={active} size="default" />
                             {navList.length > 1 && (
                                 <div className="flex items-center justify-center gap-2 sm:justify-end">
@@ -488,6 +487,15 @@ export default function Projects() {
                                 </div>
                             )}
                         </div>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            className="absolute right-3 top-3 z-20 rounded-full bg-background/90 shadow-sm backdrop-blur"
+                            onClick={() => setActiveTitle(null)}
+                            aria-label="Close project details"
+                        >
+                            <X className="h-4 w-4" />
+                        </Button>
                     </DialogContent>
                 )}
             </Dialog>
